@@ -37,7 +37,7 @@
                     <form action="/">
                         <input class="button" type="submit" value="$50 per point!">
                     </form>
-                    <form action="/double">
+                    <form action="/two">
                         <input class="button" type="submit" value="2 for $100!">
                     </form>
                     <form action="/reset">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="col-md-12 box">
-                <h1>WATCH OUT! - THE LEADER HAS <%= counter+3 %> POINTS!</h1>
+                <h1>WATCH OUT! - THE LEADER HAS <%= counter + (Math.floor((Math.random() * 9) + 1)) %> POINTS!</h1>
                 <form action="/catchUp">
                     <input class="button" type="submit" value="Catch Up!">
                 </form>

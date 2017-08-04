@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
     res.render("index", {'counter':req.session.counter});
 })
 
-app.get('/double', function(req, res){
+app.get('/two', function(req, res){
     req.session.counter += 2;
     res.redirect('/');
 })
