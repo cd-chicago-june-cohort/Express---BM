@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class = "container">
+        <div class="col-md-4">
+            <h1 class = "header">Dojo Survey</h1>
+            <form class = "pure-form pure-form-stacked" action="process" method="post">
+                Your Name: <input id="name" class="input" type="text" name="name"><br>
+                Dojo: <select class="input" id="location" name="dojo">
+                    <option value="select" selected></option>>Select</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="Maui">Maui</option>
+                    </select>
+                    <br>
+                Sensei: <select id="language" class="input" name="sensei">
+                    <option value="select" selected></option>>Select</option>
+                    <option value="Mike">Mike</option>
+                    <option value="Fiaz">Fiaz</option>
+                    <option value="Vanessa">Vanessa</option>
+                    <option value="David">David</option>
+                    <option value="Tyler Durden">Tyler Durden</option>
+                    </select><br>
+                Comments (optional:)<br><textarea name="comment" class="input"></textarea>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

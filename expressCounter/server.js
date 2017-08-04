@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
-var bodyParser = require('body-parser');
-var session = require('express-session');
+var bodyParser = require("body-parser");
+var session = require("express-session");
 
 var app = express();
 
@@ -37,17 +37,10 @@ app.get('/reset', function(req, res){
     res.redirect('/');
 })
 
-
-
-
-
 app.post('/users', function(req, res) {
  console.log("POST DATA", req.body);
- // This is where we would add the user to the database
- // Then redirect to the root route
  res.redirect('/');
 })
-
 
 app.get("/users", function (request, response){
     // hard-coded user data
@@ -60,7 +53,6 @@ app.get("/users", function (request, response){
     response.render('users', {users: users_array});
 })
 
-// tell the express app to listen on port 8000
 app.listen(8000, function() {
  console.log("listening to those hot MEAN cuts on port 8000");
 });
