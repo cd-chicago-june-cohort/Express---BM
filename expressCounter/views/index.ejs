@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 box">
+                <h1 class="header">FU, Pay Me!</h1>
+                <h3 class="right">You owe Bald Mike: $<%= counter * 50 %>!</h3>
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 box">
+                <div class="col-md-12 points">
+                    <form action="/">
+                        <input class="button" type="submit" value="$50 per point!">
+                    </form>
+                    <form action="/double">
+                        <input class="button" type="submit" value="2 for $100!">
+                    </form>
+                    <form action="/reset">
+                        <input class="button" type="submit" value="Redeem Points!">
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <h1>You've earned <%= counter %> POINTS!</h1>
+                    <h3>Keep pushing buttons, earn more POINTS!</h3>
+                    <h3>Challenge your friends!</h3>
+                </div>
+                <div class="col-md-12 points">
+                    <form action="/">
+                        <input class="button" type="submit" value="$50 per point!">
+                    </form>
+                    <form action="/double">
+                        <input class="button" type="submit" value="2 for $100!">
+                    </form>
+                    <form action="/reset">
+                        <input class="button" type="submit" value="Redeem Points!">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12 box">
+                <h1>WATCH OUT! - THE LEADER HAS <%= counter+3 %> POINTS!</h1>
+                <form action="/catchUp">
+                    <input class="button" type="submit" value="Catch Up!">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-12 footer">
+            <h5>&copyCopyright 2017 | Bald Mike's Brain</h5>
+        </div>
+    </div>
+</body>
+</html>

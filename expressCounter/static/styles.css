@@ -1,0 +1,52 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+form {
+    display: inline;
+    margin: 5px;
+}
+
+.container {
+    background-image: url("money.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+}
+
+.button {
+    width: 100px;
+    background-color: greenyellow;
+}
+
+.header {
+    font-size: 100px;
+    margin: 10px;
+}
+
+.footer {
+    color: white;
+    font-size: 40px;
+}
+
+.box {
+    margin: auto;
+    border: 4px solid gray;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.points {
+    margin: 10px;
+}
+
+.right {
+    float: right;
+}

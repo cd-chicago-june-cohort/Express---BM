@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="header">Leakers</h1>
+                </div>
+           </div>
+       </div>
+        <div class="row">
+            <div class="col-md-6 box">
+                <h2>Here are all the leakers:</h2>
+                <% for (var x in users) { %>
+                <h3>Name: <%= users[x].name %></h3>
+                <h4>Email: <%= users[x].email %></h4>
+                <hr>
+                <% } %>
+            </div>
+        </div>
+</body>
+</html>
