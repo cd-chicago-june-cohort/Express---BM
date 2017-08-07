@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            // this triggers the connection event in our server!
+            var socket  = io.connect();
+            
+            $("#surveySays").hide();
+
+            $('form').submit(function(){
+                event.preventDefault();
+                socket.emit( "submit", {name: $("#name").val(), dojo: $("dojo").val(), sensei: $("sensei"), comment: $("comment").val()}); 
+            });
+            
+            socket.on( 'server_response', function (data) {
+                console.log("socket.on AND server_response LINE 23 ROCKING");
+                $("#surveySays").show();
+                $("#info").append(document.createTextNode("You said: " + JSON.stringify(data.user)));
+                $("#num").append(document.createTextNode('Your lucky number emitted by the server is: ' + data.num));
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class = "container">
+        <div class="col-md-6">
+            <h1 class = "header">Dojo Survey</h1>
+            <form class = "pure-form pure-form-stacked">
+                Your Name: <input id="name" class="input" type="text" name="name"><br>
+                Dojo: <select class="input" id="dojo" name="dojo">
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="Maui">Maui</option>
+                    </select>
+                    <br>
+                Sensei: <select id="sensei" class="input" name="sensei">
+                    <option value="Mike">Mike</option>
+                    <option value="Fiaz">Fiaz</option>
+                    <option value="Vanessa">Vanessa</option>
+                    <option value="David">David</option>
+                    </select><br>
+                Comments (optional:)<br><textarea name="comment" class="input"></textarea>
+
+                <input type="submit" id="submit">
+            </form>
+        </div>
+        <div class="col-md-6" id="surveySays">
+            <H1>Real Time Results</H1>
+            <h5 id="info"></h5>
+            <h5 id="num"></h5>
+        </div> 
+    </div>
+</body>
+</html>
