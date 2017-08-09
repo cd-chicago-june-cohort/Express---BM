@@ -4,7 +4,7 @@
     <meta name='viewport' content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -23,29 +23,29 @@
                     <p><input type="submit" id="post" value="Post Message"></p>
                 </form>
                 <% if(typeof(errors) != 'undefined' ) { %>
-	            <% for (var x in errors) { %>
-	            <h3><%= errors[x].message %></h3>
-	            <% } %>
- 	            <% } else { %>
- 	 	        <div>
-			        <% for(x in messages) { %>
-				    <div class="comments">
-					    <h3>Name: <%= messages[x].name %></h3>
-					    <h3>Message: <%= messages[x].message %></h3>
-					    <% for (y in messages[x]._comments) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+ 	 <% } else { %>
+ 	 	<div>
+			<% for(x in messages) { %>
+				<div>
+					<h3>Name: <%= messages[x].name %></h3>
+					<h3>Message: <%= messages[x].message %></h3>
+					<% for (y in messages[x]._comments) { %>
 						<h5><%="Name: " + messages[x]._comments[y].name %></h5>
 						<h5><%="Comment: " + messages[x]._comments[y].text %></h5>
-					    <% } %>
+					<% } %>
 
-					    <form action=<%="/comment/" + messages[x]._id %> method="post">
+					<form action=<%="/comment/" + messages[x]._id %> method="post">
 						<p class="margin">Name: </p><input class="comment_input" type="text" name="name">
 						<p class="margin">Comment: </p><textarea class="comment_text"name="comment"></textarea>
 						<input class="post2" type="submit" value="Post comment">
-					    </form>
-				    </div>
-			            <% } %>
-                </div>
- 	                    <% } %>
+					</form>
+				</div>
+			<% } %>
+		</div>
+ 	<% } %>
            </div>
         </div>
     </div>
